@@ -40,7 +40,7 @@ const options: PostGraphileOptions = {
 };
 
 export const middleware = postgraphile(
-  `postgres://${process.env.KEDO_API_USER_NAME}:${process.env.KEDO_API_USER_PASSWORD}@${process.env.KEDO_DB_HOST}:${process.env.KEDO_DB_PORT_EXPOSE}/${process.env.KEDO_DB_NAME}`,
+  process.env.DATABASE_URL,
   process.env.KEDO_DB_PUBLIC_SCHEMA,
   options,
 );

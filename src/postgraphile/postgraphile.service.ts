@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { postgraphile, PostGraphileOptions } from 'postgraphile';
-
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
