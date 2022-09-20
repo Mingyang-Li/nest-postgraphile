@@ -3,6 +3,5 @@ import { PostGraphileController } from './postgraphile.controller';
 
 @Module({
   controllers: [PostGraphileController],
-  providers: [],
 })
 export class PostgraphileModule {}

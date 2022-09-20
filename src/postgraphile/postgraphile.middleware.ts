@@ -1,5 +1,11 @@
 import { postgraphile, PostGraphileOptions } from 'postgraphile';
 
-const options: PostGraphileOptions = {};
+const options: PostGraphileOptions = {
+  retryOnInitFail: true,
+  subscriptions: true,
+};
 
-export const middleware = postgraphile(process.env.DATABASE_URL ?? '', options);
+export const middleware = postgraphile(
+  'paste_your_hardcoded_postgres_db_url',
+  options,
+);

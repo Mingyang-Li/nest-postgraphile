@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { PostgraphileModule } from './postgraphile/postgraphile.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PostgraphileModule],
-  controllers: [AppController],
-  providers: [],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    PostgraphileModule,
+  ],
 })
 export class AppModule {}
