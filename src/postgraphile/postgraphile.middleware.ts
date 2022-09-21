@@ -1,11 +1,11 @@
 import { postgraphile, PostGraphileOptions } from 'postgraphile';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 const options: PostGraphileOptions = {
-  retryOnInitFail: true,
   subscriptions: true,
+  retryOnInitFail: true,
+  graphiql: true,
 };
 
-export const middleware = postgraphile(
-  'paste_your_hardcoded_postgres_db_url',
-  options,
-);
+export const middleware = postgraphile(process.env.DATABASE_URL, options);
